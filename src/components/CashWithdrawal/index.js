@@ -9,10 +9,10 @@ class CashWithdrawal extends Component {
   subractWithrawAmount = value => {
     this.setState(prevState => {
       const amount = prevState.balance
-      if (amount > 0) {
+      if (amount - value >= 0) {
         return {balance: amount - value}
       }
-      return {balance: 0}
+      return {balance: amount}
     })
   }
 
